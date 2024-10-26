@@ -7,7 +7,11 @@ export default function Main() {
   return (
     <div>
         <Header />
-        <Outlet></Outlet>
+
+        <div>
+          <Outlet></Outlet>
+        </div>
+
         <Footer />
     </div>
   )

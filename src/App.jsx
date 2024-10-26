@@ -7,9 +7,9 @@ import router from './Routes/RouterNav/Route'
 function App() {
 
   return (
-    <>
-    <RouterProvider router={router}></RouterProvider>
-    </>
+    <div>
+      <RouterProvider router={router}></RouterProvider>
+    </div>
   )
 }
 

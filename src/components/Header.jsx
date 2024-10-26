@@ -1,6 +1,22 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { Link } from 'react-router-dom'
+import { AuthContext } from '../contexts/AuthProvider'
 
 export default function Header() {
+
+    const {name} = useContext(AuthContext);
+    
+
+    const menus = (
+        <>
+            <li><Link to='/'>Home</Link></li>
+            <li><Link to='/'>Services</Link></li>
+            <li><Link to='/'>Post</Link></li>
+            <li><Link to='/about'>About</Link></li>
+            <li><Link to='/'>Contact</Link></li>
+        </>
+    )
+
     return (
         <div>
             <div className="navbar bg-base-100">
@@ -23,36 +39,18 @@ export default function Header() {
                         <ul
                             tabIndex={0}
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                            <li><a>Item 1</a></li>
-                            <li>
-                                <a>Parent</a>
-                                <ul className="p-2">
-                                    <li><a>Submenu 1</a></li>
-                                    <li><a>Submenu 2</a></li>
-                                </ul>
-                            </li>
-                            <li><a>Item 3</a></li>
+                            {menus}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">daisyUI</a>
+                    <a className="btn btn-ghost text-xl">Login-test</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
-                        <li><a>Item 1</a></li>
-                        <li>
-                            <details>
-                                <summary>Parent</summary>
-                                <ul className="p-2">
-                                    <li><a>Submenu 1</a></li>
-                                    <li><a>Submenu 2</a></li>
-                                </ul>
-                            </details>
-                        </li>
-                        <li><a>Item 3</a></li>
+                        {menus}
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Button</a>
+                    <Link to='/login' className='btn'>Log in</Link>
                 </div>
             </div>
         </div>
