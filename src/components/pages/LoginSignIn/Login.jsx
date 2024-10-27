@@ -1,14 +1,25 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { Link } from 'react-router-dom'
+import { AuthContext } from '../../../contexts/AuthProvider';
 
 
 export default function Login() {
 
+    const [errorsLog, setErrors] = useState('')
+
+    const {signinUser} = useContext(AuthContext)
+
     const { register, handleSubmit, formState:{errors} } = useForm();
     const handleLogIn = (data) =>{
         console.log(data);
-        
+        signinUser(data.email, data.password)
+        .then((result)=>{
+            const user = result.user;
+            console.log(user);
+        }).catch(error=>{
+            setErrors(error.message)            
+        })     
     }
 
     return (
@@ -38,6 +49,7 @@ export default function Login() {
                 <div className="noAcc">
                     <Link to='/signin'>You new here? Create an account for free!</Link>
                 </div>
+                <p>{errorsLog == "Firebase: Error (auth/invalid-credential)." ? <p className='label-text text-red-400'>Create Account</p> : ''}</p>
                 <div className="form-control mt-6">
                     <button type='submit' className="btn btn-primary">Login</button>
                 </div>

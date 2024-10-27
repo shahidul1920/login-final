@@ -5,18 +5,27 @@ import { AuthContext } from '../../../contexts/AuthProvider';
 
 export default function Signin() {
 
-    const {userSign, googleLog} = useContext(AuthContext)
+    const {userCreate, googleLog, updateUser} = useContext(AuthContext)
 
     const { register, handleSubmit, formState:{errors} } = useForm();
+    
     const handleSignUp = (data)=>{
         console.log(data);
-        userSign(data.email, data.password)
-        .then((res)=>{
-            const user = res.user;
+        userCreate(data.email, data.password)
+        .then((result) =>{
+            const user = result.user;
             console.log(user);
+            const dataUpUser = {
+                displayName:data.text
+            }
+            updateUser(dataUpUser)
+            .then(()=>{})
+            .catch(error=>{console.log(error);
+            })
+        })
+        .catch((error) =>{
+            console.log(error);
             
-        }).catch((err)=>{
-            console.log(err.message);
         })
     }
 
