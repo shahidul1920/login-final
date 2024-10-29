@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { useForm } from 'react-hook-form'
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../../contexts/AuthProvider';
 
 export default function Signin() {
@@ -8,11 +8,15 @@ export default function Signin() {
     const {userCreate, googleLog, updateUser} = useContext(AuthContext)
 
     const { register, handleSubmit, formState:{errors} } = useForm();
+    const location = useLocation()
+    const navigate = useNavigate()
+    const area = location.state?.from?.pathname || "/";
     
     const handleSignUp = (data)=>{
         console.log(data);
         userCreate(data.email, data.password)
         .then((result) =>{
+            navigate(area, {replace:true})
             const user = result.user;
             console.log(user);
             const dataUpUser = {

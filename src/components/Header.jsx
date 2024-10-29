@@ -4,7 +4,7 @@ import { AuthContext } from '../contexts/AuthProvider'
 
 export default function Header() {
 
-    const {name} = useContext(AuthContext);
+    const {user,userSignOut} = useContext(AuthContext);
     
 
     const menus = (
@@ -14,12 +14,13 @@ export default function Header() {
             <li><Link to='/'>Post</Link></li>
             <li><Link to='/about'>About</Link></li>
             <li><Link to='/'>Contact</Link></li>
+            <li><Link to='/dashboard'>Dashboard</Link></li>
         </>
     )
 
     return (
         <div>
-            <div className="navbar bg-base-100">
+            <div className="navbar bg-base-100 px-[2rem]">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -50,7 +51,7 @@ export default function Header() {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <Link to='/login' className='btn'>Log in</Link>
+                    {user?.uid ? <button onClick={userSignOut}>Sign out</button> : <Link to='/login' className='btn'>Log in</Link>}                    
                 </div>
             </div>
         </div>

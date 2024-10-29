@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../../contexts/AuthProvider';
 
 
@@ -8,15 +8,18 @@ export default function Login() {
 
     const [errorsLog, setErrors] = useState('')
 
-    const {signinUser} = useContext(AuthContext)
+    const {signinUser, googleLog} = useContext(AuthContext)
+    const location = useLocation()
+    const navigate = useNavigate()
+    const area = location.state?.from?.pathname || "/";
 
     const { register, handleSubmit, formState:{errors} } = useForm();
     const handleLogIn = (data) =>{
-        console.log(data);
+
         signinUser(data.email, data.password)
         .then((result)=>{
+            navigate(area, {replace:true})
             const user = result.user;
-            console.log(user);
         }).catch(error=>{
             setErrors(error.message)            
         })     
@@ -55,7 +58,7 @@ export default function Login() {
                 </div>
                 <div className="divider">OR</div>
                 <div className="form-control">
-                    <button className="btn btn-outline">Continue with Google</button>
+                    <button onClick={()=>(googleLog())} className="btn btn-outline">Continue with Google</button>
                 </div>
             </form>
         </div>
