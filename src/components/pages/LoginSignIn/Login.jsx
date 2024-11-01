@@ -21,7 +21,9 @@ export default function Login() {
             navigate(area, {replace:true})
             const user = result.user;
         }).catch(error=>{
-            setErrors(error.message)            
+            setErrors(error.message) 
+            console.log(error);
+                       
         })     
     }
 
