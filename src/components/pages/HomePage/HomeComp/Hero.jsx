@@ -11,7 +11,7 @@ export default function Hero() {
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus voluptatum numquam ut, quam animi molestiae autem corrupti aliquam sapiente earum quia blanditiis porro, similique necessitatibus itaque cupiditate expedita nostrum id? Blanditiis dolorum incidunt eum maiores aliquam aperiam ea sapiente iure numquam quia corrupti repudiandae ut, ratione necessitatibus voluptas consequuntur doloremque.
                 </p>
                 <div>
-                    <button className="btn btn-outline rounded-[25px] btn-success">Success</button>
+                    <button className="btn btn-outline rounded-[25px] btn-success">Explore More</button>
                 </div>
             </div>
             <div className="right image flex-1">

@@ -10,7 +10,7 @@ export default function Discount() {
                 </h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, commodi?</p>
                 <div>
-                    <button className="btn btn-primary rounded-[25px] btn-success">Success</button>
+                    <button className="btn btn-primary rounded-[25px] btn-success">Explore more</button>
                 </div>
             </div>
 
