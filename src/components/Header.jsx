@@ -20,7 +20,7 @@ export default function Header() {
 
     return (
         <div>
-            <div className="navbar bg-base-100 px-[2rem]">
+            <div className="navbar px-[2rem]">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -39,14 +39,14 @@ export default function Header() {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                            className="menu menu-sm dropdown-content rounded-box z-[1] mt-3 w-52 p-2 shadow text-black">
                             {menus}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">Login-test</a>
+                    <a className="btn btn-ghost text-[#47c3b5] text-xl">Shopico</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">
+                    <ul className="menu menu-horizontal active:text-[#47c3b5] px-1 text-black">
                         {menus}
                     </ul>
                 </div>

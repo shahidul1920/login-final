@@ -1,0 +1,26 @@
+[
+    {
+        "title":"Asus vivobook s14",
+        "categories": "Electronics and Devices",
+        "type": "Sponsored",
+        "price":"$399",
+        "des": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias nobis quibusdam fuga distinctio dolor, quia ad? Numquam sed pariatur praesentium.",
+        "linkImg": "https://sg.store.asus.com/media/catalog/product/cache/cfc1c40330ad6e57776b37bffeff4c51/a/s/asus_vivobook_s_14_oled_s5406m_product_photo_8c_rose_gold_05.png"
+    },
+    {
+        "title":"Walton MX311G",
+        "categories": "Electronics and Devices",
+        "type": "Sponsored",
+        "price":"$259",
+        "des": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias nobis quibusdam fuga distinctio dolor, quia ad? Numquam sed pariatur praesentium.",
+        "linkImg": "https://eplaza.waltonbd.com/image/cache/data/Computer/Laptop/Tamarind/tamrind%20mx11g/latest-price-laptop-in-bangladesh-walton-tamarind-mx-11-pro-500x500.jpg"
+    },
+    {
+        "title":"Herry Potter (2nd Copy)",
+        "categories": "Books and Information",
+        "type": "Sponsored",
+        "price":"$300",
+        "des": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias nobis quibusdam fuga distinctio dolor, quia ad? Numquam sed pariatur praesentium.",
+        "linkImg": "https://assets.brightspot.abebooks.a2z.com/dims4/default/476b907/2147483647/strip/true/crop/360x420+0+0/resize/360x420!/format/jpg/quality/90/?url=http%3A%2F%2Fabebooks-brightspot.s3.us-west-2.amazonaws.com%2F2c%2Fb5%2F5d9a711f4f278c343574740b8da3%2Fgoblet-fire.png"
+    }
+]

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import Header from './components/Header'
+import '../styles/style.css'
 import { RouterProvider } from 'react-router-dom'
 import router from './Routes/RouterNav/Route'
 

@@ -1,0 +1,47 @@
+[
+    {
+        "category_name": "Electronics",
+            "products": [
+                {
+                    "name": "Smartphone",
+                    "brand": "Brand A",
+                    "price": 699
+                },
+                {
+                    "name": "Laptop",
+                    "brand": "Brand B",
+                    "price": 999
+                }
+            ]
+    },
+    {
+        "category_name": "Clothing",
+        "products": [
+            {
+                "name": "T-Shirt",
+                "brand": "Brand C",
+                "price": 25
+            },
+            {
+                "name": "Jeans",
+                "brand": "Brand D",
+                "price": 50
+            }
+        ]
+    },
+    {
+        "category_name": "Books",
+        "products": [
+            {
+                "name": "Book Title 1",
+                "author": "Author A",
+                "price": 15
+            },
+            {
+                "name": "Book Title 2",
+                "author": "Author B",
+                "price": 20
+            }
+        ]
+    }
+]

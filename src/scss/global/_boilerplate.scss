@@ -1,0 +1,53 @@
+*{
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background: #ffffff;
+}
+.color-m{
+    color: #47c3b5;
+}
+
+.sectionCol{
+    background: #F6F6F6;
+}
+.paySec{
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.paySec img{
+    width: 180px;
+    height: auto;
+}
+
+.container{
+    width: 1270px;
+    display: flex ;
+    margin: 0 auto;
+    padding: 0;
+}
+.disc-r{
+    margin: 3rem auto;
+    padding: 4rem;
+    .text-cen{
+        font-weight: 600;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        justify-content: center;
+        //align-items: center;
+    }
+    img{
+        width: 400px;
+        height: auto;
+        object-fit: cover;
+    }
+}
