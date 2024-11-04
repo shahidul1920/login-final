@@ -57,5 +57,6 @@ export default function AuthProvider({ children }) {
     userSignOut,
     loading
   }
+  
   return <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
 }

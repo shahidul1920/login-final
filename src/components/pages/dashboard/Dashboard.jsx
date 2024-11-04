@@ -1,14 +1,49 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
+import { AuthContext } from '../../../contexts/AuthProvider';
 
 export default function Dashboard() {
 
   const [uploadProduct, setUploadProduct] = useState()
+  const {user} = useContext(AuthContext)
+  
+  const handleSubmitProd = (e) => {
+    e.preventDefault();
+    const dataFrom = e.target;
+    const brand = dataFrom.brand.value;
+    const category = dataFrom.category.value;
+    const imgLink = dataFrom.imgLink.value;
+    const details = dataFrom.details.value;
+    const uploadedBy = user.displayName;
+    const uploaderMail = user.email
 
-
+    const dataDetailsUpload = {
+      brand,
+      category,
+      imgLink,
+      details,
+      uploaderMail,
+      uploadedBy
+    }
+    console.log(dataDetailsUpload);
+    fetch('http://localhost:3000/products',{
+      method: "POST",
+      headers:{
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(dataDetailsUpload)
+    })
+    .then(res => res.json())
+    .then(data => {
+      if(data.acknowledged){
+        alert(`product uloaded`)
+      }
+    })
+    
+  }
   return (
     <div className='mainContainer'>
 
-      <div className="card bg-base-100 w-[600px] mx-auto shrink-0 shadow-2xl">
+      <div className="card my-[5rem] bg-base-100 w-[600px] mx-auto shrink-0 shadow-2xl">
 
         <div className="left flex-1 flex justify-center text-center mt-[2rem] flex-col gap-[2rem]">
           <h1 className='text-2xl font-bold color-m'>
@@ -16,24 +51,40 @@ export default function Dashboard() {
           </h1>
         </div>
 
-        <form className="card-body">
+        <form onSubmit={handleSubmitProd} className="card-body">
           <div className="form-control">
             <label className="label">
               <span className="label-text">Product Name or Brand</span>
             </label>
-            <input type="email" placeholder="text" name='brand' className="input input-bordered" required />
+            <input type="text" placeholder="Product Name or Brand" name='brand' className="input input-bordered" />
           </div>
           <div className="form-control">
             <label className="label">
               <span className="label-text">Category</span>
             </label>
-            <select className="select select-bordered w-full">
+            <select name='category' className="select select-bordered w-full">
               <option disabled selected>Select Product Type</option>
               <option>Electronics and Devices</option>
               <option>Pet and Trees</option>
               <option>Books and Information</option>
-            </select>            
+            </select>
           </div>
+
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text">Product image</span>
+            </label>
+            <input type="text" placeholder="Paste Image Link" name='imgLink' className="input input-bordered" /> 
+          </div>
+
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text">Decription and Details</span>
+            </label>
+            <textarea className='input input-bordered' name="details" id=""></textarea> 
+          </div>
+
+
           <div className="form-control mt-6">
             <button className="btn btn-primary">Login</button>
           </div>
