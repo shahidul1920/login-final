@@ -19,7 +19,7 @@ export const Shop = () => {
       <Catgr />
 
 
-      <div className="allProduct flex gap-4">
+      <div className="allProduct grid gap-4 grid-cols-3">
         {allProduct?.map((product, i) => (
           <div key={i} className="card card-compact bg-base-100 max-w-[380px] shadow-xl">
             <figure className='figurel'>
@@ -28,9 +28,12 @@ export const Shop = () => {
                 alt={product.brand} />
             </figure>
             <div className="card-body">
-              <h2 className="card-title">{product.brand}</h2>
+              <div className="flex justify-between">
+                <h2 className="card-title">{product?.brand}</h2>
+                <h2 className="card-title">{product?.price}</h2>
+              </div>
               <p>{product.category}</p>
-              <p>Owner :{product.uploadedBy}</p>
+              <p>Owner : {product.uploadedBy}</p>
               <div className="card-actions justify-end">
                 <button className="btn btn-primary">See Details</button>
               </div>

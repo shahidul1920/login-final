@@ -4,8 +4,8 @@ import { AuthContext } from '../contexts/AuthProvider'
 
 export default function Header() {
 
-    const {user,userSignOut} = useContext(AuthContext);
-    
+    const { user, userSignOut } = useContext(AuthContext);
+
 
     const menus = (
         <>
@@ -50,7 +50,26 @@ export default function Header() {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    {user?.uid ? <button onClick={userSignOut}>Sign out</button> : <Link to='/login' className='btn'>Log in</Link>}                    
+                    {user?.uid ?
+                        <div className="dropdown dropdown-end">
+                            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                                <div className="w-10 rounded-full">
+                                    <img
+                                        alt="Tailwind CSS Navbar component"
+                                        src={user.photoURL && 'https://painrehabproducts.com/wp-content/uploads/2014/10/facebook-default-no-profile-pic-300x300.jpg'} />
+                                </div>
+                            </div>
+                            <ul
+                                tabIndex={0}
+                                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                                <li>
+                                    <Link to='/dashboard' className="justify-between">
+                                        Dashboard
+                                    </Link>
+                                </li>
+                                <li><p onClick={userSignOut}>Logout</p></li>
+                            </ul>
+                        </div> : <Link to='/login' className='btn'>Log in</Link>}
                 </div>
             </div>
         </div>

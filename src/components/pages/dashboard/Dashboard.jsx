@@ -1,9 +1,9 @@
 import React, { useContext, useState } from 'react'
 import { AuthContext } from '../../../contexts/AuthProvider';
+import { UserProfile } from './UserProfile';
 
 export default function Dashboard() {
 
-  const [uploadProduct, setUploadProduct] = useState()
   const {user} = useContext(AuthContext)
   
   const handleSubmitProd = (e) => {
@@ -13,6 +13,7 @@ export default function Dashboard() {
     const category = dataFrom.category.value;
     const imgLink = dataFrom.imgLink.value;
     const details = dataFrom.details.value;
+    const price = `BDT ${dataFrom.price.value}`;
     const uploadedBy = user.displayName;
     const uploaderMail = user.email
 
@@ -21,6 +22,7 @@ export default function Dashboard() {
       category,
       imgLink,
       details,
+      price,
       uploaderMail,
       uploadedBy
     }
@@ -42,6 +44,10 @@ export default function Dashboard() {
   }
   return (
     <div className='mainContainer'>
+
+      <div className="userDetails">
+        <UserProfile />
+      </div>
 
       <div className="card my-[5rem] bg-base-100 w-[600px] mx-auto shrink-0 shadow-2xl">
 
@@ -84,9 +90,16 @@ export default function Dashboard() {
             <textarea className='input input-bordered' name="details" id=""></textarea> 
           </div>
 
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text">Asking Price</span>
+            </label>
+            <input type="number" placeholder="Enter Asking Price" name='price' className="input input-bordered" /> 
+          </div>
+
 
           <div className="form-control mt-6">
-            <button className="btn btn-primary">Login</button>
+            <button className="btn btn-primary">Upload Product</button>
           </div>
         </form>
 
