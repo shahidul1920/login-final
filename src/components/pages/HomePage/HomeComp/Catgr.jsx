@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 
 export default function Catgr() {
 
@@ -9,10 +10,6 @@ export default function Catgr() {
             .then(res => res.json())
             .then(data => setCatgr(data))
     }, [])
-
-    console.log(catgr);
-
-
 
     return (
         <div className='mx-auto my-[4rem]'>
@@ -31,7 +28,9 @@ export default function Catgr() {
                             <h2 className="card-title text-3xl text-white">{e.title}</h2>
                             <p className='text-white'>{e.des.slice(0, 30)}....</p>
                             <div className="card-actions justify-start">
-                                <button className="btn btn-primary btn-success rounded-[25px]">Explore</button>
+                                <Link to={`/shop/${e?.cat}`}>
+                                    <button className="btn btn-primary btn-success rounded-[25px]">Explore</button>
+                                </Link>
                             </div>
                         </div>
                     </div>

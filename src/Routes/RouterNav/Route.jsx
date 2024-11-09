@@ -7,38 +7,41 @@ import Dashboard from "../../components/pages/dashboard/Dashboard";
 import PrivateRoute from "../PrivetRoute/PrivateRoute";
 import { Shop } from "../../components/pages/Shop/Shop";
 import { About } from "../../components/pages/About/About";
+import { ProductCat } from "../../components/pages/Shop/ProductCat";
 
 const router = createBrowserRouter([
     {
-        path:'/',
+        path: '/',
         element: <Main />,
-        children:[
+        children: [
             {
-                path:'/',
+                path: '/',
                 element: <Home />,
             },
             {
-                path:'/about',
+                path: '/about',
                 element: <About />,
             },
             {
-                path:'/shop',
+                path: '/shop',
                 element: <Shop />,
-                loader: async ()=> await fetch("http://localhost:3000/products"),
-                children:[
-                    {}
-                ]
+                loader: async () => await fetch("http://localhost:3000/products"),
             },
             {
-                path:'/login',
+                path: '/shop/:id',
+                element: <ProductCat />,
+                loader: async ({params}) => await fetch(`http://localhost:3000/${params.id}`)
+            },
+            {
+                path: '/login',
                 element: <Login />,
             },
             {
-                path:'/signin',
+                path: '/signin',
                 element: <Signin />,
             },
             {
-                path:'/dashboard',
+                path: '/dashboard',
                 element: (
                     <PrivateRoute>
                         <Dashboard />

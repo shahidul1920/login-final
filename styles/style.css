@@ -69,15 +69,15 @@ body {
      object-fit: cover;
 }
 
-.allProduct {
+.allProduct, .catProd {
   flex-wrap: wrap;
   margin: 4rem auto;
 }
-.allProduct .figurel {
+.allProduct .figurel, .catProd .figurel {
   width: 100%;
   max-height: 300px;
 }
-.allProduct .figurel img {
+.allProduct .figurel img, .catProd .figurel img {
   width: 100%;
   height: 100%;
 }

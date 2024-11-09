@@ -1,16 +1,19 @@
 [
     {
         "title":"Electronics and Devices",
+        "cat":"electronics",
         "des": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias nobis quibusdam fuga distinctio dolor, quia ad? Numquam sed pariatur praesentium.",
         "linkImg": "https://tse3.mm.bing.net/th?id=OIG1.rHGXoP.FkiYpt5HpKgsI&pid=ImgGn"
     },
     {
         "title":"Pet and Trees",
+        "cat":"hobby",
         "des": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias nobis quibusdam fuga distinctio dolor, quia ad? Numquam sed pariatur praesentium.",
         "linkImg": "https://tse2.mm.bing.net/th?id=OIG2.aVFncpAr7BHISVUwbRf2&pid=ImgGn"
     },
     {
         "title":"Books and Information",
+        "cat":"books",
         "des": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias nobis quibusdam fuga distinctio dolor, quia ad? Numquam sed pariatur praesentium.",
         "linkImg": "https://tse4.mm.bing.net/th?id=OIG3.YPmbuuuCn1pGg5ic9dbp&pid=ImgGn"
     }
