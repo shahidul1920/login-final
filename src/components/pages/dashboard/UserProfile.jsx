@@ -70,7 +70,7 @@ export const UserProfile = () => {
                                 <div className="avatar online">
                                     <div className="w-16 rounded-full">
                                         {/* <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" /> */}
-                                        <img src={user.photoURL} />
+                                        <img src={user?.photoURL} />
                                     </div>
                                 </div>
                             </div>

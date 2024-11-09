@@ -70,9 +70,9 @@ export default function Dashboard() {
             </label>
             <select name='category' className="select select-bordered w-full">
               <option disabled selected>Select Product Type</option>
-              <option>Electronics and Devices</option>
-              <option>Pet and Trees</option>
-              <option>Books and Information</option>
+              <option>Electronics</option>
+              <option>Hobby</option>
+              <option>Books</option>
             </select>
           </div>
 
