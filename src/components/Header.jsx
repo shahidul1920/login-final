@@ -5,6 +5,7 @@ import { AuthContext } from '../contexts/AuthProvider'
 export default function Header() {
 
     const { user, userSignOut } = useContext(AuthContext);
+    
 
 
     const menus = (
@@ -13,7 +14,7 @@ export default function Header() {
             <li><Link to='/shop'>Shop</Link></li>
             <li><Link to='/about'>About</Link></li>
             <li><Link to='/'>Contact</Link></li>
-            <li><Link to='/dashboard'>Dashboard</Link></li>
+            <li><Link to={`/dashboard/${user?.uid}`}>Dashboard</Link></li>
         </>
     )
 
@@ -56,7 +57,7 @@ export default function Header() {
                                 <div className="w-10 rounded-full">
                                     <img
                                         alt="Tailwind CSS Navbar component"
-                                        src={user.photoURL && 'https://painrehabproducts.com/wp-content/uploads/2014/10/facebook-default-no-profile-pic-300x300.jpg'} />
+                                        src={user.photoURL} />
                                 </div>
                             </div>
                             <ul

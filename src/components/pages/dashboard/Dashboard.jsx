@@ -1,10 +1,13 @@
 import React, { useContext, useState } from 'react'
 import { AuthContext } from '../../../contexts/AuthProvider';
 import { UserProfile } from './UserProfile';
+import { UserProduct } from './UserProduct';
+import { useLoaderData } from 'react-router-dom';
 
 export default function Dashboard() {
 
   const {user} = useContext(AuthContext)
+  const uploaderData = useLoaderData()
   
   const handleSubmitProd = (e) => {
     e.preventDefault();
@@ -16,8 +19,10 @@ export default function Dashboard() {
     const price = `BDT ${dataFrom.price.value}`;
     const uploadedBy = user.displayName;
     const uploaderMail = user.email
+    const uploaderID = user.uid
 
     const dataDetailsUpload = {
+      uploaderID,
       brand,
       category,
       imgLink,
@@ -26,7 +31,6 @@ export default function Dashboard() {
       uploaderMail,
       uploadedBy
     }
-    console.log(dataDetailsUpload);
     fetch('http://localhost:3000/products',{
       method: "POST",
       headers:{
@@ -102,6 +106,10 @@ export default function Dashboard() {
             <button className="btn btn-primary">Upload Product</button>
           </div>
         </form>
+
+        <div className="uploaderHistory">
+          <UserProduct upoloderData={uploaderData} />
+        </div>
 
 
 

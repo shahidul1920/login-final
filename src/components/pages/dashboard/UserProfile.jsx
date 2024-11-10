@@ -4,7 +4,6 @@ import { AuthContext } from '../../../contexts/AuthProvider'
 export const UserProfile = () => {
 
     const { user } = useContext(AuthContext)
-    console.log(user);
 
 
     return (
@@ -60,7 +59,7 @@ export const UserProfile = () => {
                                         d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                                 </svg>
                             </div>
-                            <div className="stat-title">Page Views</div>
+                            <div className="stat-title">Product Views</div>
                             <div className="stat-value text-secondary">2.6M</div>
                             <div className="stat-desc">21% more than last month</div>
                         </div>

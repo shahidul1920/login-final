@@ -18,7 +18,6 @@ export default function Signin() {
         .then((result) =>{
             navigate(area, {replace:true})
             const user = result.user;
-            console.log(user);
             const dataUpUser = {
                 displayName:data.text
             }

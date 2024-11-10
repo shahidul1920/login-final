@@ -18,12 +18,12 @@ export default function Login() {
 
         signinUser(data.email, data.password)
         .then((result)=>{
-            navigate(area, {replace:true})
             const user = result.user;
+            navigate(area, {replace:true})
+            
         }).catch(error=>{
             setErrors(error.message) 
-            console.log(error);
-                       
+            console.log(error);            
         })     
     }
 

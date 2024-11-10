@@ -19,8 +19,35 @@ export default function AuthProvider({ children }) {
   }
 
   //google login
+  // const googleLog = () => {
+  //   return signInWithPopup(auth, provider)
+  //   setLoading(true)
+  // }
+
   const googleLog = () => {
     return signInWithPopup(auth, provider)
+    .then((result)=>{
+      const user = result.user;
+      const name = user.displayName;
+      const photo = user.photoURL;
+      const mail = user.email;
+      const userID = user.uid;
+      const userinfo = {
+        userID,
+        name,
+        photo,
+        mail,
+      }
+      fetch("http://localhost:3000/users", {
+        method: "POST",
+        headers:{
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(userinfo)
+      })
+      .then(res => res.json())
+    })
+    
     setLoading(true)
   }
 
