@@ -107,13 +107,12 @@ export default function Dashboard() {
           </div>
         </form>
 
+      </div>
+
         <div className="uploaderHistory">
           <UserProduct upoloderData={uploaderData} />
         </div>
-
-
-
-      </div>
+        
     </div>
   )
 }
