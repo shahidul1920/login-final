@@ -10,7 +10,26 @@ export const Contact = () => {
         const formInf = e.target;
         const name = formInf.name.value;
         const mail = formInf.mail.value;
+        const message = formInf.message.value;
 
+        const userMessage = {
+            name,
+            mail,
+            message
+        }
+        fetch('http://localhost:3000/feedback',{
+            method: "POST",
+            headers:{
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(userMessage)
+          })
+          .then(res => res.json())
+          .then(data => {
+            if(data.acknowledged){
+              alert(`feedback uloaded`)
+            }
+          })
     }
 
     return (
