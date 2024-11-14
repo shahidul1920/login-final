@@ -24,6 +24,10 @@ export default function AuthProvider({ children }) {
   //   setLoading(true)
   // }
 
+  const handleContact =()=>{
+    console.log("hello");
+  }
+
   const googleLog = () => {
     return signInWithPopup(auth, provider)
     .then((result)=>{
@@ -82,7 +86,8 @@ export default function AuthProvider({ children }) {
     updateUser,
     signinUser,
     userSignOut,
-    loading
+    loading,
+    handleContact
   }
   
   return <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
