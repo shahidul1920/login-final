@@ -35,7 +35,7 @@ const router = createBrowserRouter([
             {
                 path: '/shop/:id',
                 element: <ProductCat />,
-                loader: async ({params}) => await fetch(`http://localhost:3000/${params.id}`)
+                loader: async ({params}) => await fetch(`http://localhost:3000/shop/${params.id}`)
             },
             {
                 path: '/login',

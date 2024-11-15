@@ -3,7 +3,7 @@ import React from 'react'
 export const UserProduct = ({upoloderData}) => {
     
   return (
-    <div className='flex gap-[1rem]'>
+    <div className='flex flex-wrap gap-[1rem]'>
         {upoloderData?.map((product, i) => (
           <div key={i} className="card catProd card-compact bg-base-100 max-w-[380px] shadow-xl">
             <figure className='figurel'>

@@ -17,23 +17,30 @@ export const Contact = () => {
             mail,
             message
         }
-        fetch('http://localhost:3000/feedback',{
+        fetch('http://localhost:3000/feedback', {
             method: "POST",
-            headers:{
-              "content-type": "application/json",
+            headers: {
+                "content-type": "application/json",
             },
             body: JSON.stringify(userMessage)
-          })
-          .then(res => res.json())
-          .then(data => {
-            if(data.acknowledged){
-              alert(`feedback uloaded`)
-            }
-          })
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.acknowledged) {
+                    alert(`feedback uloaded`)
+                }
+            })
     }
 
     return (
         <div className='mainContainer mt-[4rem]'>
+
+            <div className='text-center mb-[3rem]'>
+                <h1 className='text-3xl font-semibold text-black'>Let us know what you thoughts about us</h1>
+                <p className='max-w-[740px] mx-auto mt-4'>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius non quod assumenda, cupiditate labore possimus deserunt ratione quasi amet vero tenetur eum odio libero corrupti hic accusamus laudantium dignissimos, consectetur fugit! Recusandae rerum vel, similique eligendi porro aut quisquam quos?
+                </p>
+            </div>
 
             <div className='formSec flex'>
                 <div className="mainForm flex-1">

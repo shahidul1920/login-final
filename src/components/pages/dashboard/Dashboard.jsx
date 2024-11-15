@@ -6,9 +6,9 @@ import { useLoaderData } from 'react-router-dom';
 
 export default function Dashboard() {
 
-  const {user} = useContext(AuthContext)
+  const { user } = useContext(AuthContext)
   const uploaderData = useLoaderData()
-  
+
   const handleSubmitProd = (e) => {
     e.preventDefault();
     const dataFrom = e.target;
@@ -31,20 +31,20 @@ export default function Dashboard() {
       uploaderMail,
       uploadedBy
     }
-    fetch('http://localhost:3000/products',{
+    fetch('http://localhost:3000/products', {
       method: "POST",
-      headers:{
+      headers: {
         "content-type": "application/json",
       },
       body: JSON.stringify(dataDetailsUpload)
     })
-    .then(res => res.json())
-    .then(data => {
-      if(data.acknowledged){
-        alert(`product uloaded`)
-      }
-    })
-    
+      .then(res => res.json())
+      .then(data => {
+        if (data.acknowledged) {
+          alert(`product uloaded`)
+        }
+      })
+
   }
   return (
     <div className='mainContainer'>
@@ -84,21 +84,21 @@ export default function Dashboard() {
             <label className="label">
               <span className="label-text">Product image</span>
             </label>
-            <input type="text" placeholder="Paste Image Link" name='imgLink' className="input input-bordered" /> 
+            <input type="text" placeholder="Paste Image Link" name='imgLink' className="input input-bordered" />
           </div>
 
           <div className="form-control">
             <label className="label">
               <span className="label-text">Decription and Details</span>
             </label>
-            <textarea className='input input-bordered' name="details" id=""></textarea> 
+            <textarea className='input input-bordered' name="details" id=""></textarea>
           </div>
 
           <div className="form-control">
             <label className="label">
               <span className="label-text">Asking Price</span>
             </label>
-            <input type="number" placeholder="Enter Asking Price" name='price' className="input input-bordered" /> 
+            <input type="number" placeholder="Enter Asking Price" name='price' className="input input-bordered" />
           </div>
 
 
@@ -109,10 +109,16 @@ export default function Dashboard() {
 
       </div>
 
-        <div className="uploaderHistory">
-          <UserProduct upoloderData={uploaderData} />
+      <div className="uploaderHistory">
+        <div className='text-center mb-[3rem]'>
+          <h1 className='text-3xl font-semibold text-black'>Your recent posts</h1>
+          <p className='max-w-[740px] mx-auto mt-4'>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius non quod assumenda, cupiditate labore possimus
+          </p>
         </div>
-        
+        <UserProduct upoloderData={uploaderData} />
+      </div>
+
     </div>
   )
 }
