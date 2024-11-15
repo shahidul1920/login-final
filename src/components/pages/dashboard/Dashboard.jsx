@@ -31,7 +31,7 @@ export default function Dashboard() {
       uploaderMail,
       uploadedBy
     }
-    fetch('http://localhost:3000/products', {
+    fetch('https://backend-for2ndmarket.vercel.app/products', {
       method: "POST",
       headers: {
         "content-type": "application/json",

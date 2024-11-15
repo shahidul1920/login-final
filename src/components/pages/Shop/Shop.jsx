@@ -7,7 +7,7 @@ export const Shop = () => {
   //const [allProduct, setAllProduct] = useState()
 
   // useEffect(() => {
-  //   fetch('http://localhost:3000/products')
+  //   fetch('https://backend-for2ndmarket.vercel.app/products')
   //     .then(res => res.json())
   //     .then(data => setAllProduct(data))
   // }, [])
