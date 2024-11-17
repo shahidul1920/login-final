@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import Catgr from '../HomePage/HomeComp/Catgr'
-import { useLoaderData } from 'react-router-dom'
+import { Link, useLoaderData } from 'react-router-dom'
 
 export const Shop = () => {
 
   //const [allProduct, setAllProduct] = useState()
 
   // useEffect(() => {
-  //   fetch('https://backend-for2ndmarket.vercel.app/products')
+  //   fetch('http://localhost:3000/products')
   //     .then(res => res.json())
   //     .then(data => setAllProduct(data))
   // }, [])
@@ -35,7 +35,9 @@ export const Shop = () => {
               <p>{product.category}</p>
               <p>Owner : {product.uploadedBy}</p>
               <div className="card-actions justify-end">
-                <button className="btn btn-primary">See Details</button>
+                <Link to={`/shop/${product.brand}/${product?._id}`}>
+                  <button className="btn btn-primary">See Details</button>
+                </Link>
               </div>
             </div>
           </div>

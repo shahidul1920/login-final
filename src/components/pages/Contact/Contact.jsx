@@ -17,7 +17,7 @@ export const Contact = () => {
             mail,
             message
         }
-        fetch('https://backend-for2ndmarket.vercel.app/feedback', {
+        fetch('http://localhost:3000/feedback', {
             method: "POST",
             headers: {
                 "content-type": "application/json",

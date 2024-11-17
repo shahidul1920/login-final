@@ -30,12 +30,17 @@ const router = createBrowserRouter([
             {
                 path: '/shop',
                 element: <Shop />,
-                loader: async () => await fetch("https://backend-for2ndmarket.vercel.app/products"),
+                loader: async () => await fetch("http://localhost:3000/products"),
             },
             {
                 path: '/shop/:id',
                 element: <ProductCat />,
-                loader: async ({params}) => await fetch(`https://backend-for2ndmarket.vercel.app/shop/${params.id}`)
+                loader: async ({params}) => await fetch(`http://localhost:3000/shop/${params.id}`)
+            },
+            {
+                path: '/shop/:name/:id',
+                element: <ProductCat />,
+                loader: async ({params}) => await fetch(`http://localhost:3000/shop/${params.name}/${params.id}`)
             },
             {
                 path: '/login',
@@ -52,7 +57,7 @@ const router = createBrowserRouter([
                         <Dashboard />
                     </PrivateRoute>
                 ),
-                loader: async ({params}) => await fetch(`https://backend-for2ndmarket.vercel.app/products/${params.id}`)
+                loader: async ({params}) => await fetch(`http://localhost:3000/products/${params.id}`)
             },
         ]
     }

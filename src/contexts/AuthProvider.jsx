@@ -42,7 +42,7 @@ export default function AuthProvider({ children }) {
         photo,
         mail,
       }
-      fetch("https://backend-for2ndmarket.vercel.app/users", {
+      fetch("http://localhost:3000/users", {
         method: "POST",
         headers:{
           "content-type": "application/json",
