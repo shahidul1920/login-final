@@ -9,6 +9,7 @@ import { Shop } from "../../components/pages/Shop/Shop";
 import { About } from "../../components/pages/About/About";
 import { ProductCat } from "../../components/pages/Shop/ProductCat";
 import { Contact } from "../../components/pages/Contact/Contact";
+import { SingleProdc } from "../../components/pages/Shop/SingleProdc";
 
 const router = createBrowserRouter([
     {
@@ -39,8 +40,8 @@ const router = createBrowserRouter([
             },
             {
                 path: '/shop/:name/:id',
-                element: <ProductCat />,
-                loader: async ({params}) => await fetch(`http://localhost:3000/shop/${params.name}/${params.id}`)
+                element: <SingleProdc />,
+                loader: async ({params}) => await fetch(`http://localhost:3000/product/${params.id}`)
             },
             {
                 path: '/login',
