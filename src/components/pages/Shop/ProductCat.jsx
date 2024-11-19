@@ -9,9 +9,11 @@ export const ProductCat = () => {
     return (
         <div>
 
-            <Catgr />
+            <div>
+                <Catgr />
+            </div>
 
-            <div className='flex gap-4 flex-wrap'>
+            <div className='grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
                 {catType?.map((product, i) => (
                     <div key={i} className="card card-compact bg-base-100 max-w-[380px] catProd shadow-xl">
                         <figure className='figurel'>

@@ -40,6 +40,7 @@ export default function Dashboard() {
     })
       .then(res => res.json())
       .then(data => {
+        dataFrom.reset();
         if (data.acknowledged) {
           alert(`product uloaded`)
         }
